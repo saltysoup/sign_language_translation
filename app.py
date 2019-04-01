@@ -24,10 +24,8 @@ def inference():
         fileName = "picture.png"
         fullPath = localPath + fileName
 
-        print (fullPath)
         with open(fullPath, "wb") as fh:
             fh.write(base64.b64decode(img_data))
-            print ("yay")
 
         modelResponse = getInference(fullPath)
 
@@ -40,4 +38,4 @@ def inference():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
