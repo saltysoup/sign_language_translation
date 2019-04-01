@@ -27,5 +27,5 @@ ADD logs /handstracker
 RUN pip3 install -r requirements.txt
 
 EXPOSE 80
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
 CMD ["app.py"]
