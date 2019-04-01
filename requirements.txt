@@ -1,5 +1,5 @@
+flask==1.0.2
 tensorflow==1.2.1
 matplotlib==2.0.2
 numpy==1.13.0
 opencv-python==3.2.0.8
-flask==1.0.2
