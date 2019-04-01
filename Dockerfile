@@ -1,10 +1,17 @@
 FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y \
+    git
     python3 \
     python3-pip \
     python3-tk \
     python-opencv
+# installing git lfs for large files
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository ppa:git-core/ppa
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo /bin/bash
+RUN apt-get install -y git-lfs
+RUN git lfs install
 
 RUN mkdir /handstracker
 WORKDIR /handstracker
