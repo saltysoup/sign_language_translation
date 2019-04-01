@@ -13,6 +13,10 @@ ADD requirements.txt /handstracker
 ADD train.py /handstracker
 ADD classify.py /handstracker
 ADD classify_webcam.py /handstracker
-COPY dataset /handstracker/dataset/
+ADD app.py /handstracker
+ADD logs /handstracker
 
 RUN pip3 install -r requirements.txt
+
+ENTRYPOINT ["python"]
+CMD ["app.py"]
