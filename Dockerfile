@@ -16,13 +16,14 @@ RUN git lfs install
 
 RUN mkdir /handstracker
 WORKDIR /handstracker
+RUN mkdir /logs
 
 ADD requirements.txt /handstracker
 ADD train.py /handstracker
 ADD classify.py /handstracker
 ADD classify_webcam.py /handstracker
 ADD app.py /handstracker
-ADD logs /handstracker
+ADD logs /handstracker/logs
 
 RUN pip3 install -r requirements.txt
 
