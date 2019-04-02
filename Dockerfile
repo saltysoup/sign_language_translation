@@ -7,12 +7,6 @@ RUN apt-get update && apt-get install -y \
     python3-tk \
     python-opencv \
     curl
-# installing git lfs for large files
-RUN apt-get install -y software-properties-common
-RUN add-apt-repository ppa:git-core/ppa
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | /bin/bash
-RUN apt-get install -y git-lfs
-RUN git lfs install
 
 RUN mkdir /handstracker
 WORKDIR /handstracker
@@ -24,6 +18,12 @@ ADD classify.py /handstracker
 ADD classify_webcam.py /handstracker
 ADD app.py /handstracker
 ADD logs /handstracker/logs
+
+# workaround for downloading lfs large files otherwise just downloads pointer files only
+RUN rm logs/output_graph.pb
+RUN rm logs/training_summaries/basic/train/events.out.tfevents.1553513319.c6cf3afea9ed
+RUN curl -L https://github.com/saltysoup/sign_language_translation/raw/master/logs/output_graph.pb > /handstracker/logs/output_graph.pb
+RUN curl -L https://github.com/saltysoup/sign_language_translation/raw/master/logs/training_summaries/basic/train/events.out.tfevents.1553513319.c6cf3afea9ed > /handstracker/logs/training_summaries/basic/train/events.out.tfevents.1553513319.c6cf3afea9ed
 
 RUN pip3 install -r requirements.txt
 
