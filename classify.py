@@ -37,9 +37,10 @@ def getModelResponse(imagePath):
         response = {}
 
         for node_id in top_k:
-            human_string = label_lines[node_id]
-            score = predictions[0][node_id]
-            #print('%s (score = %.5f)' % (human_string, score))
-            response[human_string] = score
+                human_string = label_lines[node_id]
+                score = predictions[0][node_id]
+                score = round(score.item(),6) # convert to float and round
+                #print('%s (score = %.5f)' % (human_string, score))
+                response[human_string] = score
 
     return (response) # {'a': 'confidence'} in dict
