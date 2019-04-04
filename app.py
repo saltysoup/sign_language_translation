@@ -2,8 +2,10 @@
 
 import base64
 import json
+import sys
 from flask import Flask, request, Response
 from classify import getModelResponse  
+
 
 app = Flask(__name__)
 
@@ -22,7 +24,7 @@ def inference():
     try:
         raw_form = request.form
         img_data = raw_form['image']
-        print (raw_form)
+        print (raw_form, file=sys.stderr)
         localPath = "/tmp/"
         fileName = "picture.png"
         fullPath = localPath + fileName
@@ -30,11 +32,11 @@ def inference():
         with open(fullPath, "wb") as fh:
             fh.write(base64.b64decode(img_data))
         modelResponse = getInference(fullPath)
-        print (json.dumps(modelResponse))
+        print (json.dumps(modelResponse), file=sys.stderr)
         return Response(json.dumps(modelResponse), mimetype='application/json', status=200)
     except Exception as e:
-        print ("error when decoding b64 form data and saving to /tmp")
-        print (e)
+        print ("error when decoding b64 form data and saving to /tmp", file=sys.stderr)
+        print (e, file=sys.stderr)
         return Response(json.dumps({'Error': e}), mimetype='application/json', status=500)
     
 if __name__ == "__main__":
