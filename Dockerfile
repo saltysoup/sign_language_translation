@@ -14,7 +14,6 @@ RUN mkdir /logs
 ADD requirements.txt /handstracker
 ADD train.py /handstracker
 ADD classify.py /handstracker
-ADD classify_webcam.py /handstracker
 ADD app.py /handstracker
 ADD logs /handstracker/logs
 
