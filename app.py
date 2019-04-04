@@ -22,6 +22,7 @@ def inference():
     try:
         raw_form = request.form
         img_data = raw_form['image']
+        print (raw_form)
         localPath = "/tmp/"
         fileName = "picture.png"
         fullPath = localPath + fileName
