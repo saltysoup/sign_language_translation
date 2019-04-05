@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rekognition-summit",
-    "slug": "rekognition-summit",
+    "name": "signlang-summit",
+    "slug": "signlang-summit",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -24,8 +24,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.injae.rekognition-summit"
+      "bundleIdentifier": "com.injae.signlanguagesummit"
     },
-    "description": "rekognition RN app for syd summit"
+    "android": {
+      "package": "com.injae.signlanguagesummit"
+    },
+    "description": "signlanguage RN app for syd summit"
   }
 }

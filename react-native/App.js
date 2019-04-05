@@ -80,6 +80,7 @@ export default class App extends React.Component {
 
   render() {
     const { hasCameraPermission, predictions } = this.state;
+    console.log("Render predictions: ", this.state.predictions); // test
     if (hasCameraPermission === null) {
       return <View />;
     } else if (hasCameraPermission === false) {
@@ -115,7 +116,7 @@ export default class App extends React.Component {
                     this.state.predictions
                     }
                   renderItem={({ item }) => (
-                    <Text style={{ paddingTop: 20, paddingLeft: 15, color: 'white', fontSize: 30 }}>{item}</Text>
+                    <Text style={{ paddingTop: 20, paddingLeft: 15, color: 'white', fontSize: 30 }}>{`${item[0].toUpperCase()} ${item[1]}%`}</Text>
                   )}
                 />
               </View>
