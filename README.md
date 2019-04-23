@@ -8,9 +8,11 @@ The framework used for the CNN implementation can be found here:
 
 The project contains the dataset (1Go). If you are only interested in code, you better copy/paste the few files than cloning the entire project.
 
-You can [find the demo here](https://youtu.be/kBw-xGEIYhY)
+# Update - Demo Link
+## Demo
+You can [find the demo here](#)
 
-[![Demo](http://img.youtube.com/vi/kBw-xGEIYhY/0.jpg)](http://www.youtube.com/watch?v=kBw-xGEIYhY)
+[![Demo](#)](#)
 
 ## Requirements
 
@@ -19,9 +21,11 @@ This project uses python 3.5 and the PIP following packages:
 * tensorflow
 * matplotlib
 * numpy
+* flask
 
 See requirements.txt and Dockerfile for versions and required APT packages
 
+# Update - Docker instructions
 ### Using Docker
 ```
 docker build -t hands-classifier .
@@ -31,6 +35,8 @@ docker run -it hands-classifier bash
 ```
 pip3 install -r requirements.txt
 ```
+
+# Update - Training
 ## Training
 
 To train the model, use the following command (see framework github link for more command options):
@@ -45,7 +51,8 @@ python3 train.py \
   --image_dir=./dataset
 ```
 If you're using the provided dataset, it may take up to three hours.
-  
+
+# Update - Flask instructions
 ## Classifying
   
 To test classification, use the following command:
@@ -53,10 +60,4 @@ To test classification, use the following command:
 python3 classify.py path/to/image.jpg
 ```
 
-## Using webcam (demo)
 
-To use webcam, use the following command:
-```
-python3 classify_webcam.py
-```
-Your hand must be inside the rectangle. Keep position to write word, see demo for deletions.
