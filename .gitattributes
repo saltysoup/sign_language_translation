@@ -1,5 +1,5 @@
-training_summaries/basic/train/events.out.tfevents.1553513319.c6cf3afea9ed filter=lfs diff=lfs merge=lfs -text
 output_graph.pb filter=lfs diff=lfs merge=lfs -text
+logs/training_summaries/basic/train/events.out.tfevents.1555983567.ip-172-31-11-95 filter=lfs diff=lfs merge=lfs -text
 *.pb filter=lfs diff=lfs merge=lfs -text
 *.tgz filter=lfs diff=lfs merge=lfs -text
 *events.out.tfevents.1555983567.ip-172-31-11-95 filter=lfs diff=lfs merge=lfs -text
