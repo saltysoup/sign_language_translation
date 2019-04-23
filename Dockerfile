@@ -19,7 +19,7 @@ ADD logs /handstracker/logs
 
 # workaround for downloading lfs large files otherwise just downloads pointer files only
 RUN rm logs/output_graph.pb
-RUN rm https://github.com/saltysoup/sign_language_translation/raw/master/logs/training_summaries/basic/train/events.out.tfevents.1555983567.ip-172-31-11-95
+RUN rm logs/training_summaries/basic/train/events.out.tfevents.1555983567.ip-172-31-11-95
 RUN rm inception/classify_image_graph_def.pb
 RUN rm inception/inception-2015-12-05.tgz
 
