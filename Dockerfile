@@ -16,6 +16,7 @@ ADD train.py /handstracker
 ADD classify.py /handstracker
 ADD app.py /handstracker
 ADD logs /handstracker/logs
+ADD inception /handstracker/inception
 
 # workaround for downloading lfs large files otherwise just downloads pointer files only
 RUN rm logs/output_graph.pb
